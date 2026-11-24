@@ -1,0 +1,119 @@
+<section class="explore-section" id="explorar">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">TU PRÓXIMA AVENTURA</p>
+      <h2>Rutas con <em>alma payanesa</em></h2>
+      <p class="section-description">
+        Elige una modalidad y encuentra tu camino entre historia,
+        naturaleza y ciudad.
+      </p>
+    </div>
+    <label class="search-box">
+      <span aria-hidden="true">⌕</span>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Buscar una ruta..."
+        aria-label="Buscar una ruta"
+      />
+    </label>
+  </div>
+
+  <div class="filter-row" role="group" aria-label="Filtrar por modalidad">
+    <button
+      class="filter-button is-active"
+      type="button"
+      data-filter="todas"
+      aria-pressed="true"
+    >
+      Todas <span id="all-count">0</span>
+    </button>
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="ciclismo"
+      aria-pressed="false"
+    >
+      <span class="filter-icon">↗</span> Ciclismo
+    </button>
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="senderismo"
+      aria-pressed="false"
+    >
+      <span class="filter-icon">⌁</span> Senderismo
+    </button>
+    <button
+      class="filter-button"
+      type="button"
+      data-filter="turistica"
+      aria-pressed="false"
+    >
+      <span class="filter-icon">⌖</span> Turismo
+    </button>
+    <span id="results-label" class="results-label"></span>
+  </div>
+
+  <div class="explore-layout">
+    <div class="catalog-column">
+      <div
+        id="catalog-grid"
+        class="catalog-grid"
+        aria-live="polite"
+      ></div>
+      <p id="empty-state" class="empty-state" hidden>
+        No encontramos rutas con esos filtros. Prueba otra búsqueda.
+      </p>
+    </div>
+    <aside class="map-column" id="mapa">
+      <div class="map-heading">
+        <div>
+          <span class="live-dot"></span
+          ><strong>Popayán en el mapa</strong>
+        </div>
+        <span id="map-count" class="map-count">0 rutas</span>
+      </div>
+      <div
+        id="map"
+        class="map"
+        role="application"
+        aria-label="Mapa interactivo de travesías en Popayán"
+      ></div>
+      <div id="map-editor-controls" class="map-editor-controls" hidden>
+        <p id="map-editor-instruction" role="status"></p>
+        <div>
+          <button id="map-editor-start" class="button button-quiet" type="button">
+            Elegir inicio
+          </button>
+          <button id="map-editor-undo" class="button button-quiet" type="button">
+            Deshacer punto
+          </button>
+          <button id="map-editor-clear" class="button button-quiet" type="button">
+            Borrar recorrido
+          </button>
+          <button id="map-editor-finish" class="button button-primary" type="button">
+            Terminar recorrido
+          </button>
+          <button id="map-editor-cancel" class="button button-quiet" type="button">
+            Cancelar
+          </button>
+        </div>
+      </div>
+      <div class="map-legend">
+        <span class="legend-line"></span> Selecciona una ruta para ver su
+        recorrido
+      </div>
+      <section
+        id="travesia-details"
+        class="detail-panel"
+        aria-live="polite"
+      >
+        <p class="detail-placeholder">
+          Selecciona una tarjeta o marcador para ver la ruta y sus
+          experiencias.
+        </p>
+      </section>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<dialog id="auth-dialog" class="modal">
+  <form id="auth-form" class="modal-card">
+    <button
+      class="modal-close"
+      type="button"
+      data-close-dialog
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+    <p class="eyebrow">COMUNIDAD PAYANESA</p>
+    <h2 id="auth-title">Acceso de usuario</h2>
+    <p id="auth-description" class="modal-description">
+      Inicia sesión para compartir tu experiencia en la ruta.
+    </p>
+    <p id="auth-role-note" class="auth-role-note"></p>
+    <div class="auth-switch">
+      <button
+        type="button"
+        class="auth-mode is-selected"
+        data-auth-mode="login"
+      >
+        Iniciar sesión
+      </button>
+      <button
+        id="register-mode-button"
+        type="button"
+        class="auth-mode"
+        data-auth-mode="register"
+      >
+        Crear cuenta
+      </button>
+    </div>
+    <label id="name-field" class="form-field" hidden
+      >Nombre de usuario<input name="nombre" autocomplete="name" minlength="2"
+    /></label>
+    <label class="form-field"
+      >Correo electrónico<input
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+    /></label>
+    <label class="form-field"
+      >Contraseña<input
+        name="contrasena"
+        type="password"
+        autocomplete="current-password"
+        minlength="8"
+        required
+    /></label>
+    <button class="button button-primary button-wide" type="submit">
+      Continuar
+    </button>
+    <p id="auth-error" class="form-message" role="status"></p>
+  </form>
+</dialog>

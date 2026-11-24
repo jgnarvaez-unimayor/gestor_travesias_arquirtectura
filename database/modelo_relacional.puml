@@ -1,0 +1,48 @@
+@startuml
+skinparam linetype ortho
+
+entity "usuarios" as Usuario {
+  * id : UUID <<PK>>
+  --
+  nombre : varchar
+  email : varchar <<UQ>>
+  contrasena_hash : text
+  rol : varchar
+  nivel_acceso : varchar
+  test_mascara_resuelto : boolean
+}
+
+entity "travesias" as Travesia {
+  * id : varchar <<PK>>
+  --
+  modalidad : varchar
+  titulo : varchar
+  descripcion : text
+  ubicacion : varchar
+  latitud : double
+  longitud : double
+  ruta_coordenadas : jsonb
+  detalles : jsonb
+}
+
+entity "experiencias" as Experiencia {
+  * id : UUID <<PK>>
+  --
+  usuario_id : UUID <<FK>>
+  travesia_id : varchar <<FK>>
+  comentario : text
+  fecha : date
+}
+
+entity "valoraciones" as Valoracion {
+  * id : UUID <<PK>>
+  --
+  experiencia_id : UUID <<FK,UQ>>
+  puntuacion : smallint
+  fecha : date
+}
+
+Usuario ||--o{ Experiencia
+Travesia ||--o{ Experiencia
+Experiencia ||--|| Valoracion
+@enduml

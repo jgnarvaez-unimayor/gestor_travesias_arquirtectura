@@ -1,0 +1,83 @@
+<dialog id="travesia-dialog" class="modal">
+  <form id="travesia-form" class="modal-card">
+    <button
+      class="modal-close"
+      type="button"
+      data-close-dialog
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+    <p class="eyebrow">GESTIÓN DE TRAVESÍAS</p>
+    <h2 id="route-dialog-title">Crear una ruta</h2>
+    <p id="route-dialog-description" class="modal-description">
+      Añade una nueva travesía al mapa de Popayán.
+    </p>
+    <label class="form-field"
+      >Modalidad
+      <select name="modalidad" id="new-modality">
+        <option value="ciclismo">Ciclismo</option>
+        <option value="senderismo">Senderismo</option>
+        <option value="turistica">Turismo</option>
+      </select>
+    </label>
+    <label class="form-field"
+      >Título<input name="titulo" required maxlength="160"
+    /></label>
+    <label class="form-field"
+      >Descripción<textarea name="descripcion" rows="3" required></textarea>
+    </label>
+    <label class="form-field"
+      >Ubicación en Popayán<input
+        name="ubicacion"
+        required
+        value="Popayán, Cauca"
+    /></label>
+    <button id="map-pick-button" class="button button-quiet map-pick-button" type="button">
+      Elegir inicio y recorrido en el mapa
+    </button>
+    <div class="form-grid">
+      <label class="form-field"
+        >Latitud (opcional)<input
+          name="latitud"
+          type="number"
+          step="any"
+          placeholder="Se busca en el mapa"
+      /></label>
+      <label class="form-field"
+        >Longitud (opcional)<input
+          name="longitud"
+          type="number"
+          step="any"
+          placeholder="Se busca en el mapa"
+      /></label>
+    </div>
+    <label class="form-field"
+      ><span id="specific-label">Detalle de la modalidad</span
+      ><input
+        name="detalle"
+        id="specific-value"
+        placeholder="Ej. Ciclismo urbano"
+    /></label>
+    <div class="form-grid">
+      <label class="form-field"
+        >Distancia en km (opcional)<input
+          name="distanciaKm"
+          type="number"
+          min="0"
+          step="any"
+      /></label>
+      <label class="form-field"
+        >Duración en minutos (opcional)<input
+          name="duracionMinutos"
+          type="number"
+          min="1"
+          step="1"
+      /></label>
+    </div>
+    <button id="route-submit-button" class="button button-primary button-wide" type="submit">
+      Guardar travesía
+    </button>
+    <p id="travesia-error" class="form-message" role="status"></p>
+  </form>
+</dialog>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Descubre travesías de ciclismo, senderismo y turismo en Popayán."
+    />
+    <title>Travesías Popayán | Explora a tu ritmo</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      window.API_BASE_URL = "http://localhost:3000/api";
+    </script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+      defer
+    ></script>
+    <script type="module" src="js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div data-partial="site-header.html"></div>
+    <main id="inicio">
+      <div data-partial="hero-section.html"></div>
+      <div data-partial="explore-section.html"></div>
+      <div data-partial="about-section.html"></div>
+    </main>
+    <div data-partial="site-footer.html"></div>
+    <div data-partial="auth-dialog.html"></div>
+    <div data-partial="travesia-dialog.html"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
